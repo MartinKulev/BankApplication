@@ -5,8 +5,6 @@ VisualStudioVersion = 17.5.33502.453
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bank_Web_App", "Bank_Web_App.csproj", "{12B0D21B-8CD0-4A30-9DEF-3EA6E5D9C095}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bank_Web_App_Tests", "..\TestProject3\Bank_Web_App_Tests.csproj", "{7B97E58B-70C0-4CA5-A1DE-FDC2081988A1}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{12B0D21B-8CD0-4A30-9DEF-3EA6E5D9C095}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12B0D21B-8CD0-4A30-9DEF-3EA6E5D9C095}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{12B0D21B-8CD0-4A30-9DEF-3EA6E5D9C095}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7B97E58B-70C0-4CA5-A1DE-FDC2081988A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7B97E58B-70C0-4CA5-A1DE-FDC2081988A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7B97E58B-70C0-4CA5-A1DE-FDC2081988A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7B97E58B-70C0-4CA5-A1DE-FDC2081988A1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
