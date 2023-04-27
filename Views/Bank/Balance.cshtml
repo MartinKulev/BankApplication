@@ -1,0 +1,69 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Balance Page</title>
+	<style>
+		body {
+			background-color: #f2f2f2;
+			font-family: Arial, sans-serif;
+		}
+
+		h1 {
+			color: black;
+			font-weight: bold;
+			text-align: center;
+			margin-top: 50px;
+		}
+
+		p {
+			color: #333;
+			text-align: center;
+			font-size: 24px;
+			margin-top: 20px;
+		}
+
+		.green-text {
+			color: #4CAF50;
+			font-weight: bold;
+		}
+
+		.center {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-top: 50px;
+		}
+
+		.button {
+			background-color: #4CAF50;
+			color: white;
+			padding: 12px 24px;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			font-size: 18px;
+		}
+
+			.button:hover {
+				background-color: #3e8e41;
+			}
+	</style>
+</head>
+<body>
+	<form method="post" asp-controller="Bank" asp-action="Balance">
+	<h1>Balance Page</h1>
+	<p>Balance: <span class="green-text">@Model.Balance$</span></p>
+	<div class="center">
+		<button type="submit" class="button">Go Back <input hidden value="goBackButton" name="optionButton"/> </button>
+	</div>
+	<</form>
+</body>
+</html>
+
+

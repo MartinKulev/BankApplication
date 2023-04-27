@@ -1,0 +1,130 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Transfer Page</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f2f2f2;
+			color: #333;
+		}
+
+		.button {
+			background-color: #4CAF50;
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			padding: 10px 20px;
+			font-size: 16px;
+			cursor: pointer;
+		}
+
+			.button:hover {
+				background-color: #3e8e41;
+			}
+
+		h1 {
+			color: black;
+			font-weight: bold;
+			text-align: center;
+			margin-top: 50px;
+		}
+
+			h1.money-transfer {
+				font-size: 36px;
+				margin-top: 20px;
+			}
+
+		form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: 0 auto;
+			width: 50%;
+			padding: 20px;
+			background-color: #fff;
+			border-radius: 5px;
+			box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+		}
+
+		label {
+			display: block;
+			margin-bottom: 10px;
+			font-weight: bold;
+			text-align: center;
+		}
+
+		input[type="text"], input[type="number"] {
+			display: block;
+			width: 100%;
+			padding: 10px;
+			border: none;
+			border-radius: 5px;
+			box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+			margin-bottom: 20px;
+			box-sizing: border-box;
+		}
+
+		input[type="submit"] {
+			background-color: #4CAF50;
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			padding: 10px 20px;
+			font-size: 16px;
+			cursor: pointer;
+		}
+
+			input[type="submit"]:hover {
+				background-color: #3e8e41;
+			}
+	</style>
+</head>
+<body>
+	<h1 class="money-transfer">Transfer Page</h1>
+	<div class="center">
+		<form method="post" asp-controller="Bank" asp-action="Transfer">
+			<label for="iban">Enter the IBAN you wish the money to be transferred to:</label>
+			<input type="text" name="iban" id="iban" required>
+			<label for="transferAmount">Enter the amount of money you wish to transfer:</label>
+			<input type="number" name="transferAmount" id="transferAmount" required>
+			<input type="submit" value="Submit">
+			@if (ViewData["CantTrasnferToYourselfError"] != null)
+			{
+				<p><span style="color:red;">@ViewData["CantTrasnferToYourselfError"]</span></p>
+			}
+			@if (ViewData["IBANDoesntExistMessage"] != null)
+			{
+				<p><span style="color:red;">@ViewData["IBANDoesntExistMessage"]</span></p>
+			}
+			@if (ViewData["CantTrasnferMoreThanYouHaveError"] != null)
+			{
+				<p><span style="color:red;">@ViewData["CantTrasnferMoreThanYouHaveError"]</span></p>
+			}
+
+		@if (ViewData["CantTrasnferUnderZeroYouHaveError"] != null)
+	    {
+				<p><span style="color:red;">@ViewData["CantTrasnferUnderZeroYouHaveError"]</span></p>
+	    }
+		@if (ViewData["SuccesfulTrasnferMessage"] != null)
+        {
+				<p><span style="color:green;">@ViewData["SuccesfulTrasnferMessage"]</span></p>
+				<p>Your new balance: <span class="green-text">@Model.Balance$</span></p>
+        }
+		</form>
+	</div>
+		<form method="post" asp-controller="Bank" asp-action="Transfer">
+		<button type="submit" class="button">Go Back <input hidden value="goBackButton" name="optionButton" /> </button>
+	    </form>
+</body>
+</html>
+
+

@@ -1,0 +1,102 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pay Credit Page</title>
+	<style>
+		.header {
+			background-color: #4CAF50;
+			color: white;
+			text-align: center;
+			padding: 10px;
+			font-size: 24px;
+			font-weight: bold;
+		}
+
+		body {
+			background-color: #f2f2f2;
+			font-family: Arial, sans-serif;
+		}
+
+		.message {
+			background-color: white;
+			padding: 20px;
+			border-radius: 5px;
+			margin: 50px auto;
+			max-width: 500px;
+			box-shadow: 0px 2px 6px rgba(0,0,0,0.3);
+		}
+
+			.message p {
+				color: #333;
+				font-size: 24px;
+				margin-top: 20px;
+			}
+
+				.message p span {
+					font-weight: bold;
+				}
+
+		.red-text {
+			color: red;
+			font-weight: bold;
+		}
+
+		.green-text {
+			color: green;
+			font-weight: bold;
+		}
+
+		.center {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-top: 50px;
+		}
+
+		.button {
+			background-color: #4CAF50;
+			color: white;
+			padding: 12px 24px;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			font-size: 18px;
+		}
+
+			.button:hover {
+				background-color: #3e8e41;
+			}
+	</style>
+</head>
+<body>
+	<header class="header">Pay Credit Page</header>
+	<div class="message">
+		@if (ViewData["CreditSuccessfulyPaidMessage"] != null)
+		{
+			<p><span class="green-text">@ViewData["CreditSuccessfulyPaidMessage"]</span></p>
+			<p><span class="green-text">@ViewData["CreditSuccessfulyPaidMessage2"]</span></p>
+		}
+		@if (ViewData["NotEnoughMoneyToPayCreditError"] != null)
+		{
+			<p><span class="red-text">@ViewData["NotEnoughMoneyToPayCreditError"]</span></p>
+		}
+		@if (ViewData["YouHaveNoExistingCreditsError"] != null)
+		{
+			<p><span class="red-text">@ViewData["YouHaveNoExistingCreditsError"]</span></p>
+		}
+	</div>
+	<div class="center">
+		<form method="post" asp-controller="Bank" asp-action="PayCredit">
+			<button type="submit" class="button">Go Back <input hidden value="goBackButton" name="optionButton" /> </button>
+		</form>
+	</div>
+</body>
+</html>
+
+

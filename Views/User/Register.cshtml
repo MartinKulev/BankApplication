@@ -1,0 +1,74 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<style>
+    label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+    input[type="text"], input[type="email"], input[type="password"] {
+        padding: 5px;
+        font-size: 16px;
+    }
+
+    input[type="submit"] {
+        margin-top: 10px;
+        padding: 5px 20px;
+        font-size: 16px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+    }
+
+    .form-container {
+        text-align: center;
+    }
+
+    .register-title {
+        font-size: 32px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .error-message {
+        color: red;
+        margin-top: 5px;
+    }
+</style>
+
+<div class="form-container">
+    <h1 class="register-title">Register</h1>
+    <form method="post" asp-controller="User" asp-action="Register">
+        <label for="egn">Enter your EGN:</label>
+        <input type="text" id="egn" name="egn" minlength="10" maxlength="10" required><br>
+        
+        <label for="first-name">Enter your First name:</label>
+        <input type="text" id="first_name" name="first_name" required><br>
+
+        <label for="last-name">Enter your Last name:</label>
+        <input type="text" id="last_name" name="last_name" required><br>
+
+        <label for="email">Enter your Email address:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="pin">Choose a 4-digit PIN code:</label>
+        <input type="password" id="pin" name="pin" minlength="4" maxlength="4" required><br>
+
+        <input type="submit" value="Submit">
+
+        @if (ViewData["EGNExistsError"] != null)
+        {
+            <p><span style="color:red;">@ViewData["EGNExistsError"]</span></p>
+        }
+    </form>
+</div>
+
+            
+

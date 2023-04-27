@@ -1,0 +1,60 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<style>
+    label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+    input[type="text"], input[type="password"] {
+        padding: 5px;
+        font-size: 16px;
+    }
+
+    input[type="submit"] {
+        margin-top: 10px;
+        padding: 5px 20px;
+        font-size: 16px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+    }
+
+    .form-container {
+        text-align: center;
+    }
+
+    .register-title {
+        font-size: 32px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+</style>
+
+<div class="form-container">
+    <h1 class="register-title">Login</h1>
+    <form method="post" asp-controller="User" asp-action="Login">
+        <label for="card-number">Enter your card number:</label>
+        <input type="text" id="card_number" name="card_number" minlength="19" maxlength="19" required><br>
+
+        <label for="pin">Enter your PIN code:</label>
+        <input type="password" id="pin" name="pin" minlength="4" maxlength="4" required><br>
+
+        <input type="submit" value="Submit">
+        @if (ViewData["CardNumberDoesntExistError"] != null)
+        {
+            <p><span style="color:red;">@ViewData["CardNumberDoesntExistError"]</span></p>
+        }
+        @if (ViewData["WrongPINError"] != null)
+        {
+            <p><span style="color:red;">@ViewData["WrongPINError"]</span></p>
+        }      
+    </form>
+</div>

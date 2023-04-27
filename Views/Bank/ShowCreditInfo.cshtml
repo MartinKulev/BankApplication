@@ -1,0 +1,103 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Credit Information</title>
+	<style>
+		.header {
+			background-color: #4CAF50;
+			color: white;
+			text-align: center;
+			padding: 10px;
+			font-size: 24px;
+			font-weight: bold;
+		}
+
+		body {
+			background-color: #f2f2f2;
+			font-family: Arial, sans-serif;
+		}
+
+		h1 {
+			color: black;
+			font-weight: bold;
+			text-align: center;
+			margin-top: 50px;
+		}
+
+		p {
+			color: #333;
+			text-align: center;
+			font-size: 24px;
+			margin-top: 20px;
+		}
+
+		.credit-information {
+			background-color: white;
+			padding: 20px;
+			border-radius: 5px;
+			margin: 50px auto;
+			max-width: 500px;
+			box-shadow: 0px 2px 6px rgba(0,0,0,0.3);
+		}
+
+		.red-text {
+			color: red;
+			font-weight: bold;
+		}
+
+		.gray-text {
+			color: #333;
+		}
+
+		.center {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-top: 50px;
+		}
+
+		.button {
+			background-color: #4CAF50;
+			color: white;
+			padding: 12px 24px;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			font-size: 18px;
+		}
+
+			.button:hover {
+				background-color: #3e8e41;
+			}
+	</style>
+</head>
+<body>
+	<header class="header">Credit Information</header>
+	<div class="credit-information">
+		@if (ViewData["YouHaveNoExistingCreditsMessage"] != null)
+		{
+			<p><span style="color:green;">@ViewData["YouHaveNoExistingCreditsMessage"]</span></p>
+		}
+		else
+		{
+			<p class="red-text">You have 1 existing credit:</p>
+			<p class="gray-text">Date taken: <span class="red-text">@Model.Credit_taken_date</span></p>
+			<p class="gray-text">Date to return: <span class="red-text">@Model.Credit_toReturn_date</span></p>
+			<p class="gray-text">Credit amount: <span class="red-text">@Model.Credit_amount$</span></p>
+			<p class="gray-text">Credit interest: <span class="red-text">@Model.Credit_interest%</span></p>
+			<p class="gray-text">To be paid: <span class="red-text">@Model.Credit_ToBePaid$ </span></p>
+		}
+	</div>
+	<div class="center">
+		<form method="post" asp-controller="Bank" asp-action="ShowCreditInfo">
+			<button type="submit" class="button">Go Back <input hidden value="goBackButton" name="optionButton" /> </button>
+		</form>
+	</div>
+</body>
+</html>

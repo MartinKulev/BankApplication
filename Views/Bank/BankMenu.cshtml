@@ -1,0 +1,66 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<style>
+    .header {
+        background-color: #4CAF50;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .btn {
+        background-color: #008CBA;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 10px;
+    }
+
+        .btn:hover {
+            background-color: #005b82;
+        }
+
+    .container {
+        text-align: center;
+    }
+</style>
+
+<div class="header">
+    Login successful!<br>
+    Welcome, @Model.First_name @Model.Last_name
+</div>
+<div class="container">
+    <form method="post" asp-controller="Bank" asp-action="BankMenu">
+        <button type="submit" class="btn">1. Show Balance <input hidden value="showBalanceButton" name="optionButton" /> </button>
+    </form>
+    <form method="post" asp-controller="Bank" asp-action="BankMenu">
+        <button type="submit" class="btn">2. Withdraw Money <input hidden value="withdrawMoneyButton" name="optionButton" /> </button>
+    </form>
+    <form method="post" asp-controller="Bank" asp-action="BankMenu">
+        <button type="submit" class="btn">3. Deposit Money <input hidden value="depositMoneyButton" name="optionButton"/> </button>
+    </form>
+    <form method="post" asp-controller="Bank" asp-action="BankMenu">
+        <button type="submit" class="btn">4. Transfer Money <input hidden value="transferMoneyButton" name="optionButton"/> </button>
+    </form>
+    <form method="post" asp-controller="Bank" asp-action="BankMenu">
+        <button type="submit" class="btn">5. Show Credit Info <input hidden value="showCreditInfoButton" name="optionButton"/> </button>
+    </form>
+    <form method="post" asp-controller="Bank" asp-action="BankMenu">
+        <button type="submit" class="btn">6. Take Credit <input hidden value="takeCreditButton" name="optionButton"/> </button>
+    </form>
+    <form method="post" asp-controller="Bank" asp-action="BankMenu">
+        <button type="submit" class="btn">7. Pay Credit <input hidden value="payCreditButton" name="optionButton"/> </button>
+    </form>
+    <form method="post" asp-controller="Bank" asp-action="BankMenu">
+        <button type="submit" class="btn">8. Logout <input hidden value="logoutButton" name="optionButton"/> </button>
+    </form>
+</div>
+
