@@ -1,5 +1,5 @@
 # Bank-Project
-An ASP.NET Core app that represents a bank. You need to change the connection string, according to your database, so the app can work.
+A console app that represents a bank. You need to change the connection string, according to your database in order for the app to work.
 
 # How to use the program?
 
