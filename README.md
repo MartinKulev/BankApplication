@@ -20,7 +20,8 @@ Upon pressing this button you will be taken to a page with a box, in which you c
 You can press "Go Back" at any time to return to the Bank Menu page.
 
 # Deposit Money
-Upon pressing this button you will be taken to a page with a box, in which you can type in the amount you wish to deposit. Then by pressing "Submit" you can withdraw the amount you wrote if the number entered is valid.
+Upon pressing this button you will be taken to a page with a box, in which you can type in the amount you wish to deposit.
+Then by pressing "Submit" you can deposit the amount you wrote if the number entered is valid.
 You can press "Go Back" at any time to return to the Bank Menu page.
 
 # Transfer Money
