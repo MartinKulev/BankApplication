@@ -4,10 +4,7 @@ An Asp.NET Core app that represents a bank. You need to change the connection st
 # How to use the program?
 
 # Login and Register
-You will first be faced with 2 buttons: Login and Register. When you press "Register" it takes you to a page where you need to type in your credentials.
-They are the following: EGN, First name, Last name, Email adress and your choice of a 4-digit PIN code. You need to remeber your PIN and your IBAN.
-Once you fill the boxes with a valid information it will take you to a page where a random card number is generated for you. You need to remember your card number.
-Then you can press "Login". This takes you to a page where you need to type in your card number and PIN, that you used to register with. Upon entering valid information you will be taken to the Bank Menu page.
+You will first be faced with 2 buttons: Login and Register. When you press "Register" it takes you to a page where you need to type in your credentials. They are the following: EGN, First name, Last name, Email adress and your choice of a 4-digit PIN code. You need to remeber your PIN and your IBAN. Once you fill the boxes with a valid information it will take you to a page where a random card number is generated for you. You need to remember your card number. Then you can press "Login". This takes you to a page where you need to type in your card number and PIN, that you used to register with. Upon entering valid information you will be taken to the Bank Menu page.
 
 # Bank Menu
 The Bank Menu has 8 buttons. They are: Show Balance, Withdraw Money. Deposit Money, Transfer Money, Show Credit Info, Take Credit, Pay Credit, Logout.
@@ -28,8 +25,7 @@ Upon pressing this button you will be taken to a page, in which you can type in 
 Upon pressing this button you will be taken to a page, in which you can see if you have an existing credit and if you have one - you can see the information about the credit. You can press "Go Back" at any time to return to the Bank Menu page.
 
 # Take Credit
-Upon pressing this button you will be taken to a page with 3 options for a credit, each one on a different button. You can take credit by pressing one of the buttons.
-If you don't have an existing credit and you press one of the buttons for credit you will be taken to a page with a message that you have succesfully taken a credit and your updated balance. If you have an existing credit and you press on of the buttons for a credit, you will not be able to take another credit until you pay your current one and an error message will be displayed instead. You can press "Go Back" at any time to return to the Bank Menu page.
+Upon pressing this button you will be taken to a page with 3 options for a credit, each one on a different button. You can take credit by pressing one of the buttons. If you don't have an existing credit and you press one of the buttons for credit you will be taken to a page with a message that you have succesfully taken a credit and your updated balance. If you have an existing credit and you press on of the buttons for a credit, you will not be able to take another credit until you pay your current one and an error message will be displayed instead. You can press "Go Back" at any time to return to the Bank Menu page.
 
 # Pay Credit
 Upon pressing this button you will be taken to a page with a message, according to your credit paying status. You can press "Go Back" at any time to return to the Bank Menu page.
