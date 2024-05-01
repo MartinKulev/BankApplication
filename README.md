@@ -1,3 +1,6 @@
+# Hosting
+The app is hosted here: [https://bankweb24.azurewebsites.net](https://bankweb24.azurewebsites.net)
+
 # Bank-Project
 An Asp.NET Core app that represents a bank. You need to change the connection string, according to your database in order for the app to work.
 
