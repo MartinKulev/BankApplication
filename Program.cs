@@ -6,7 +6,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<BankContext>(c => c.UseMySQL("Server=localhost;Database=Bank_Web;Uid=root;Pwd=Martin1234;")); //Change the data here
+
+builder.Configuration.AddJsonFile(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "GitSecrets.json"), optional: true);
+string? connectionString = builder.Configuration.GetConnectionString("BankApplication") ?? builder.Configuration.GetConnectionString("DefaultConnection")!;
+
+builder.Services.AddDbContext<BankContext>(options => options.UseMySQL(connectionString));
 
 builder.Services.AddScoped<BankService, BankService>();
 builder.Services.AddScoped<UserService, UserService>();
